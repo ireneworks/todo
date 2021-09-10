@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, width=device-width, height=device-height, minimal-ui">
+    <meta name="apple-mobile-web-app-capable" content="no">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no">
+    <title>TodoList</title>
+</head>
+<body>
+    <form>
+        <label for="new-todo-content"></label><input id="new-todo-content" type="text" name="add_new_todo" placeholder="할 일을 입력하세요."/>
+        <button type="submit">추가</button>
+    </form>
+    <div>
+        <div>
+            <button>모두</button>
+            <button>완료</button>
+            <button>미완료</button>
+        </div>
+        <ol>
+            <li>
+                <label>
+                    <input type="checkbox">
+                </label>
+                <p>추가일:</p><time datetime="2021-09-09">2021.09.09.</time>
+                <p>맥북 A/S 맡기기</p>
+            </li>
+            <li>
+                <label>
+                    <input type="checkbox">
+                </label>
+                <p>추가일:</p><time datetime="2021-09-08">2021.09.08.</time>
+                <p>시금치 사기</p>
+            </li>
+            <li>
+                <label>
+                    <input type="checkbox">
+                </label>
+                <p>추가일:</p><time datetime="2021-09-07">2021.09.07.</time>
+                <p>쿠팡 반품 확인하기</p>
+            </li>
+        </ol>
+    </div>
+</body>
+<script type="module" src="index.js"></script>
