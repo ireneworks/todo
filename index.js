@@ -6,18 +6,18 @@ function addNewTodo() {
 
     function addNewTodoToList(){
         //li 엘리먼트 생성
-        const addNewList = document.createElement("li");
+        const li = document.createElement("li");
         //text 노드 추가
-        addNewList.appendChild(document.createTextNode(newTodoContent));
+        li.appendChild(document.createTextNode(newTodoContent));
         //ol에 li 추가
-        document.getElementById("todo-list").appendChild(addNewList);
+        document.getElementById("todo-list").append(li);
     }
-    addNewTodoToList();
-    // if (newTodoContent !== "") {
-    //     addNewTodoToList();
-    //     alert(`[${newTodoContent}]할 일이 등록되었습니다.`);
-    // }
-    // else {
-    //     alert("할 일을 입력하세요.");
-    // }
+
+    if (newTodoContent !== "") {
+        addNewTodoToList();
+        alert(`[${newTodoContent}]할 일이 등록되었습니다.`);
+    }
+    else {
+        alert("할 일을 입력하세요.");
+    }
 }
