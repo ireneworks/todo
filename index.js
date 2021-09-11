@@ -3,5 +3,10 @@ addNewTodo.addEventListener("click", noticeNewTodo);
 
 function noticeNewTodo(){
     let newTodoContent = document.getElementById("new-todo-content").value;
-    alert(newTodoContent)
+    if (newTodoContent === ""){
+        alert("할 일을 입력해주세요.");
+    }
+    else {
+        alert(newTodoContent);
+    }
 }
