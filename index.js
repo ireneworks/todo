@@ -1,5 +1,7 @@
 const addNewTodo = document.getElementById("todo-submit")
-addNewTodo.addEventListener("click", function(){
+addNewTodo.addEventListener("click", noticeNewTodo);
+
+function noticeNewTodo(){
     let newTodoContent = document.getElementById("new-todo-content");
-    alert(newTodoContent);
-});
+    alert(newTodoContent)
+}
