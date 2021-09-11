@@ -1,6 +1,5 @@
-function newTodoContent () {
-    const todoContent = document.getElementById("new-todo-content").value;
-    console.log(todoContent);
-}
-
-newTodoContent();
+const addNewTodo = document.getElementById("todo-submit")
+addNewTodo.addEventListener("click", function(){
+    let newTodoContent = document.getElementById("new-todo-content");
+    alert(newTodoContent);
+});
