@@ -8,7 +8,7 @@ function addNewTodo() {
         //li 엘리먼트 생성
         const li = document.createElement("li");
         //text 노드 추가
-        li.appendChild(document.createTextNode(newTodoContent));
+        li.append(document.createTextNode(newTodoContent));
         //ol에 li 추가
         document.getElementById("todo-list").append(li);
     }
@@ -21,3 +21,10 @@ function addNewTodo() {
         alert("할 일을 입력하세요.");
     }
 }
+
+const textChanges = document.getElementById("new-todo-conten").value;
+textChanges.addEventListener("change", function(){
+    const p = document.createElement("p");
+    p.append(document.createTextNode("hello"));
+    document.getElementById("hello").append(p);
+});
