@@ -22,7 +22,7 @@ function addNewTodo() {
     }
 }
 
-const textChanges = document.getElementById("new-todo-conten").value;
+const textChanges = document.getElementById("new-todo-content").value;
 textChanges.addEventListener("change", function(){
     const p = document.createElement("p");
     p.append(document.createTextNode("hello"));
