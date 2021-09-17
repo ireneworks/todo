@@ -1,30 +1,50 @@
-const submitNewTodo = document.getElementById("todo-submit")
-submitNewTodo.addEventListener("click", addNewTodo);
+const submitNewTodo = document.getElementById("new-todo");
+submitNewTodo.addEventListener("submit", addNewTodo);
 
-function addNewTodo() {
-    const newTodoContent = document.getElementById("new-todo-content").value;
+function addNewTodo(e) {
+    e.preventDefault();
 
-    function addNewTodoToList(){
-        //li 엘리먼트 생성
-        const li = document.createElement("li");
-        //text 노드 추가
-        li.append(document.createTextNode(newTodoContent));
-        //ol에 li 추가
-        document.getElementById("todo-list").append(li);
-    }
+    let newTodoContent = document.getElementById("new-todo-content").value;
 
-    if (newTodoContent !== "") {
+    if (newTodoContent.value !== "") {
         addNewTodoToList();
         alert(`[${newTodoContent}]할 일이 등록되었습니다.`);
     }
     else {
         alert("할 일을 입력하세요.");
     }
+    function addNewTodoToList(){
+        //엘리먼트 생성
+        const li = document.createElement("li");
+        li.className = "todo";
+
+        const checkbox = document.createElement("input");
+        checkbox.type = 'checkbox';
+        checkbox.className = "todo-checkbox";
+
+        const todoText = document.createElement("input");
+        todoText.type = "text";
+        todoText.value = newTodoContent;
+
+        const date = document.createElement("p");
+        const deleteTodo = document.createElement("button");
+        deleteTodo.type = "submit";
+        deleteTodo.className = "delete-todo";
+        //노드 추가
+        li.append(checkbox, deleteTodo);
+        date.append(`등록일: ${new Date()}`);
+        checkbox.after(date, todoText);
+        deleteTodo.append("삭제");
+
+        //ol에 li 추가
+        document.getElementById("todo-list").prepend(li);
+    }
 }
 
-const textChanges = document.getElementById("new-todo-content").value;
-textChanges.addEventListener("change", function(){
-    const p = document.createElement("p");
-    p.append(document.createTextNode("hello"));
-    document.getElementById("hello").append(p);
-});
+const deleteButton = document.getElementsByClassName("delete-todo");
+deleteButton.addEventListener("submit", deleteTodo);
+function deleteTodo(e){
+    e.preventDefault();
+    const li = document.querySelector('li');
+    li.remove();
+}
